@@ -1,14 +1,18 @@
 import csv
 from aluno import Aluno
+class Main:
+    aluno = Aluno('101','Francis','10')
+    aluno1= Aluno('102','Gustavo','8')
 
-aluno = Aluno('101','Francis','10')
+    arquivo = open('teste.csv', 'w') # Abra o arquivo (leitura)
+    try:
+        writer=csv.writer(arquivo)
+        writer.writerow(('Cod','Nome','Nota'))
+        writer.writerow((aluno.codigo,aluno.nome,aluno.nota))
+        writer.writerow((aluno1.codigo,aluno1.nome,aluno1.nota))
+    finally:
+        arquivo.close()
+    print(open('teste.csv','rt').read())
+    conteudo = open('teste.csv','rt').read()
 
-arquivo = open('teste.csv', 'r') # Abra o arquivo (leitura)
-conteudo = arquivo.readlines()
-print(conteudo)
-
-conteudo.append('teste')   # insira seu conteúdo
-
-arquivo = open('banco', 'w') # Abre novamente o arquivo (escrita)
-arquivo.writelines(conteudo)    # escreva o conteúdo criado anteriormente nele.
-arquivo.close()
+    print(conteudo)
