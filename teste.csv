@@ -1,4 +1,8 @@
-Cod,Nome,Nota
-101,Francis,10
-102,Gustavo,8
-103,Filipe,9
+Cod,Nome,Nota,Controle
+
+101,Francis,10,0
+
+102,Gustavo,8,0
+
+103,Filipe,9,0
+
